@@ -1,0 +1,1 @@
+package com.github.losemy.utils.bean;

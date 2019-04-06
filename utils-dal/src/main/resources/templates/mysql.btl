@@ -1,0 +1,21 @@
+@// 简化开发 utf8mb4 避免存储email失败
+
+CREATE database if NOT EXISTS `${db}` default character set utf8mb4 collate utf8mb4_general_ci;
+use `${db}`;
+
+@for(table in tables){
+DROP TABLE IF EXISTS `${table.name}`;
+create table `${table.name}` (
+    `ID` int(11) NOT NULL AUTO_INCREMENT,
+@for(column in table.columnInfos){
+    `${column.name}` ${column.type} @if(!column.allowNull)
+NOT NULL @
+COMMENT '${column.comment}',
+@}
+    PRIMARY KEY(`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+@for(index in table.indexInfos){
+ALERT TABLE `${table.name}` ADD INDEX ${index.name}(${index.indexColumns});
+
+@}
+@}
