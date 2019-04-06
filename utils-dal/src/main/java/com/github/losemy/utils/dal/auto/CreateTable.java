@@ -18,7 +18,7 @@ public class CreateTable {
     public static void main(String[] args){
 
 
-        String name = "/home/lose/tests/test.xlsx";
+        String name = "/lose/githubs/mail/mail-db.xlsx";
         List<TableInfo> tables = ReadFromExcelUtil.readFile(name);
 
         TemplateEngine engine = TemplateUtil.createEngine(new TemplateConfig("templates", TemplateConfig.ResourceMode.CLASSPATH));
@@ -26,7 +26,7 @@ public class CreateTable {
 
         Map<String,Object> context = new HashMap<>();
         context.put("tables",tables);
-        context.put("db","test");
+        context.put("db","mail");
         String result = template.render(context);
 
         System.out.println(result);

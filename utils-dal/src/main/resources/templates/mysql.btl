@@ -15,7 +15,7 @@ COMMENT '${column.comment}',
     PRIMARY KEY(`ID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 @for(index in table.indexInfos){
-ALERT TABLE `${table.name}` ADD INDEX ${index.name}(${index.indexColumns});
+ALTER TABLE `${table.name}` ADD ${index.type} ${index.name}(${index.indexColumns});
 
 @}
 @}

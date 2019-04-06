@@ -39,7 +39,7 @@ public class ReadFromExcelUtil {
                 table.setIndexInfos(indexInfos);
                 for(DataModel data : datas){
                     //不进行后续操作
-                    if("index".equalsIgnoreCase(data.getType())){
+                    if("index".equalsIgnoreCase(data.getType()) || "unique".equalsIgnoreCase(data.getType()) || "fulltext".equalsIgnoreCase(data.getType())){
                         // 索引数据添加
                         IndexInfo indexInfo = new IndexInfo();
                         indexInfo.setIndexColumns(data.getIndexColumns());
