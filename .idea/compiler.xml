@@ -2,13 +2,25 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="utilsbean" />
-        <module name="utilsdal" />
         <module name="utilsvalidator" />
+        <module name="utils-exception" />
+        <module name="utilslog" />
+        <module name="utilsbean" />
+        <module name="utilsexception" />
+        <module name="utils-validate" />
+        <module name="utils-log" />
+        <module name="utilsdal" />
+        <module name="utils-id" />
+        <module name="utilsswaggerdubbo" />
+        <module name="utilsid" />
+        <module name="utils-bean" />
+        <module name="utils-dal" />
+        <module name="utils-swaggerdubbo" />
       </profile>
     </annotationProcessing>
   </component>

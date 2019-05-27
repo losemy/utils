@@ -12,6 +12,10 @@
         <module>utils-dal</module>
         <module>utils-bean</module>
         <module>utils-validator</module>
+        <module>utils-id</module>
+        <module>utils-exception</module>
+        <module>utils-log</module>
+        <module>utils-swaggerdubbo</module>
     </modules>
 
 

@@ -21,10 +21,8 @@
 package com.github.losemy.utils.dal.generate;
 
 
-import cn.hutool.core.util.ArrayUtil;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -56,10 +54,11 @@ public class MysqlGenerator extends SuperGenerator {
     }
 
     public static void main(String[] args){
-        List<String> tableNames = Arrays.asList(new String[] {"",""});
+        // show list
+        List<String> tableNames = Arrays.asList(new String[] {"mail_template"});
         MysqlGenerator mysql = new MysqlGenerator();
         for(String tableName : tableNames){
-            mysql.getAutoGenerator(tableName);
+            mysql.generator(tableName);
         }
     }
 

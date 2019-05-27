@@ -6,7 +6,7 @@ use `${db}`;
 @for(table in tables){
 DROP TABLE IF EXISTS `${table.name}`;
 create table `${table.name}` (
-    `ID` int(11) NOT NULL AUTO_INCREMENT,
+    `ID` bigint(11) NOT NULL AUTO_INCREMENT,
 @for(column in table.columnInfos){
     `${column.name}` ${column.type} @if(!column.allowNull)
 NOT NULL @

@@ -62,10 +62,11 @@ public class SuperGenerator {
      */
     protected PackageConfig getPackageConfig() {
         return new PackageConfig()
-                .setParent("org.crown")
+                .setParent("com.github.losemy.mail")
                 .setController("controller")
-                .setEntity("model.entity")
-                .setMapper("mapper")
+                .setEntity("model")
+                .setMapper("dao")
+                .setXml("mapper")
                 .setService("service")
                 .setServiceImpl("service.impl");
     }
@@ -84,18 +85,18 @@ public class SuperGenerator {
                 .setNaming(NamingStrategy.underline_to_camel)// 表名生成策略
                 //.setInclude(new String[] { "user" }) // 需要生成的表
                 //自定义实体父类
-                .setSuperEntityClass("org.crown.framework.model.BaseModel")
+                .setSuperEntityClass("com.github.losemy.mail.dal.model.BaseModel")
                 // 自定义实体，公共字段
                 .setSuperEntityColumns("id")
                 .setTableFillList(tableFillList)
-                // 自定义 mapper 父类
-                .setSuperMapperClass("org.crown.framework.mapper.BaseMapper")
-                // 自定义 controller 父类
-                .setSuperControllerClass("org.crown.framework.controller.SuperController")
+//                // 自定义 mapper 父类
+//                .setSuperMapperClass("org.crown.framework.mapper.BaseMapper")
+//                // 自定义 controller 父类
+//                .setSuperControllerClass("org.crown.framework.controller.SuperController")
                 // 自定义 service 实现类父类
-                .setSuperServiceImplClass("org.crown.framework.service.impl.BaseServiceImpl")
+//                .setSuperServiceImplClass("org.crown.framework.service.impl.BaseServiceImpl")
                 // 自定义 service 接口父类
-                .setSuperServiceClass("org.crown.framework.service.BaseService")
+//                .setSuperServiceClass("org.crown.framework.service.BaseService")
                 // 【实体】是否生成字段常量（默认 false）
                 .setEntityColumnConstant(true)
                 // 【实体】是否为构建者模型（默认 false）
@@ -157,7 +158,7 @@ public class SuperGenerator {
                 .setDriverName("com.mysql.cj.jdbc.Driver")
                 .setUsername("lose")
                 .setPassword("lose")
-                .setUrl("jdbc:mysql://127.0.0.1:3306/crown1?characterEncoding=utf8");
+                .setUrl("jdbc:mysql://127.0.0.1:3306/mail?characterEncoding=utf8");
     }
 
     /**
@@ -176,10 +177,10 @@ public class SuperGenerator {
                 .setBaseColumnList(true)// XML columList
                 .setKotlin(false) //是否生成 kotlin 代码
                 .setOpen(false)
-                .setAuthor("losemy") //作者
+                .setAuthor("lose") //作者
                 //自定义文件命名，注意 %s 会自动填充表实体属性！
-                .setEntityName("%s")
-                .setMapperName("%sMapper")
+                .setEntityName("%sDO")
+                .setMapperName("%sDAO")
                 .setXmlName("%sMapper")
                 .setServiceName("%sService")
                 .setServiceImplName("%sServiceImpl")
